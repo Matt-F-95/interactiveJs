@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hackerYou Project 2</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="vendor/panorama_viewer-master/panorama_viewer.css">
+	<link href="https://fonts.googleapis.com/css?family=Tillana|Walter+Turncoat" rel="stylesheet">
+</head>
+<style>
+
+	body {
+   	background-image: url("img/photo.png");
+    }
+
+    h1, h2 {
+    	font-family: 'Tillana', cursive;
+    }
+
+	.modal-content {
+		color: skyblue;
+		background-color: black;
+    	padding: 20px;
+    	width: 80%; 
+    	margin: 15% auto;
+	}
+
+	button {
+		margin-top: 75px;
+	}
+
+</style>
+<body>
+	<header>
+		<h1 class="text-center">hackerYou - Project 2</h1>
+		<h2 class="text-center">jQuery Panorama view with a modal for instructions</h2>
+		<button class="center-block btn btn-default btn-lg" id="myBtn"><b>CLICK ME FOR WISDOM</b></button>   <!-- modal instruction activate  -->
+		<br>
+	</header>
+		<div class="container">
+		<div class="panorama">
+			<img src="img/pano.jpg" alt="">
+		</div><!-- ./pano -->
+		</div><!-- ./container -->
+		
+		<div class="modal" id="myModal">
+ 	    <div class="modal-content">
+    <span class="close"></span>
+    <h3>Instructions:</h3>
+    <br>
+    <h4>Sight seers:</h4>
+    <ol>
+    	<li>Hover your mouse over the image</li>
+    	<li>Click and drag to experience the panoram</li>
+    </ol>
+    <h4>Web developers:</h4>
+    <ol>
+    	<li>Well you're a developer, aren't you? Start from scratch</li>
+    	<li>or if you are really good with the copy and paste function() <-></-> <a href="http://www.thepetedesign.com/demos/panorama_viewer_demo.html" target="_blank">visit the website!</a></li>
+    	<li>Clone or Fork from <a href="https://github.com/peachananr/panorama_viewer" target="_blank">GitHub</a>! like a true jedi master, or taco master.</li>
+    </ol>
+
+  </div>
+
+</div>
+</div><!-- ./container -->
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="vendor/panorama_viewer-master/jquery.panorama_viewer.min.js"></script>
+	 <script>
+	 	$(document).ready(function(){
+
+			let modal = document.getElementById('myModal');
+			let btn = document.getElementById("myBtn");
+			let span = document.getElementsByClassName("close")[0];
+
+
+		btn.onclick = function() {
+   		    modal.style.display = "block";
+}
+
+
+		span.onclick = function() {
+    	modal.style.display = "none";
+}
+
+
+		window.onclick = function(event) {
+    	if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+});
+
+ $(".panorama").panorama_viewer({
+    repeat: false,          
+    direction: "horizontal",  
+    animationTime: 700,       
+    easing: "ease-out", 
+    overlay: true              
+  });
+    </script>
+</html>

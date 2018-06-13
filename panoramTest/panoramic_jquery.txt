@@ -1,0 +1,5 @@
+jQuery Panorama Viewer
+http://www.thepetedesign.com/demos/panorama_viewer_demo.html
+
+GitHub
+https://github.com/peachananr/panorama_viewer
